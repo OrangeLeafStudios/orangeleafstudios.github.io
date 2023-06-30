@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jingleberry Studios</title>
+    <style>
+        .image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        img {
+            max-width: 500px;
+            max-height: 500px;
+            margin-bottom: 20px;
+        }
+        .page-navigator {
+            text-align: center;
+            font-family: 'Calibri';
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            color: white;
+            background-color: #000000;
+        }
+
+        .page-navigator button {
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img id="image" src="" alt="Image">
+    </div>
+    <div class="page-navigator">
+        <button onclick="previousImage()">Previous</button>
+        <span id="page-number">1</span>
+        <button onclick="nextImage()">Next</button>
+    </div>
+
+    <script>
+        var currentPage = 1;
+        var oldPage = currentPage;
+        var totalImages = 10; // Assuming you have 10 images (1.png, 2.png, 3.png, etc.) in the folder
+        
+        function checkFileExists(filename) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("HEAD", filename, false);
+            xhr.send();
+
+            return xhr.status !== 404;
+        }
+        var cpTemp = 1;
+        while (checkFileExists(cpTemp+".png")) {
+          cpTemp++;
+        }
+
+        function loadImage() {
+            var imageElement = document.getElementById("image");
+            imageElement.src = currentPage + ".png";
+            document.getElementById("page-number").textContent = "Page " + String(currentPage);
+        }
+
+        function previousImage() {
+            if (currentPage > 1) {
+                oldPage = currentPage;
+                currentPage--;
+                loadImage();
+            }
+        }
+
+        function nextImage() {
+            if (currentPage < totalImages) {
+                oldPage = currentPage;
+                currentPage++;
+                loadImage();
+            }
+        }
+
+        // Load the initial image
+        loadImage();
+    </script>
+</body>
+</html>
