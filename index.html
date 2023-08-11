@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Digital Manga</title>
+  <style>
+    body {
+      font-family: Calibri, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x:hidden;
+    }
+    
+    #navbar {
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    
+    #navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    
+    #navbar ul li {
+      margin-right: 15px;
+    }
+    
+    #navbar ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 2.5vw;
+    }
+    
+    #navbar ul li a:hover {
+      text-decoration: underline;
+    }
+    
+    #navbar ul li#brand {
+      display: flex;
+      align-items: center;
+    }
+    
+    #navbar ul li#brand a {
+      font-size: 3vw;
+      margin-left: 10px;
+    }
+
+    #navbar img {
+      max-height: 8vw;
+      margin-left: 10px;
+    }
+    
+    #content {
+      color: white;
+      padding: 20px;
+      background-image: linear-gradient(45deg, #111, #333333);
+      height: 100%;
+      min-height: calc(100vh - 120px);
+    }
+    
+    #footer {
+      background-image: linear-gradient(to right, #151005, black, #051505);
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    #footer a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 2vw;
+    }
+    
+    @media (max-width: 768px) {
+      /* Mobile-specific font size */
+      #navbar ul li a {
+        font-size: 4.5vw;
+      }
+      #footer a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 4vw;
+      }
+    }
+    /*team grid*/
+    .team-member {
+      background-color: #333;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+      width: 200px; /* Set a consistent width for the main square */
+    }
+
+    .team-member img {
+      width: 100%; /* Make the image width 100% of the main square */
+      height: 100%; /* Make the image height 100% of the main square */
+      object-fit: cover; /* Fit the image while maintaining aspect ratio */
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      
+    }
+
+    .team-member p {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px;
+      background-color: #444;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      flex-grow: 1; /* Expand to fill available space */
+      width: 90%; /* Make the content width 100% of the main square */
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+  </style>
+  <!-- Code from orangeleafdev.github.io -->
+  <style>
+    #headline {
+      background-image: url("https://placehold.co/400x100?text=_%20%20%20%20%20b**ch+im+a+placeholder%20%20%20%20%20_&?font=source-sans-pro");
+      background-size: cover;
+      background-position: center;
+      background-color: rgba(75,75,75,0.5);
+      background-blend-mode: multiply;
+      text-align: center;
+      padding: 50px 0;
+      margin: 0 -50vw;
+      width: 200vw;
+      border-bottom: 4vh solid #000;
+    }
+    
+    #headline h1 {
+      font-size: 48px;
+      color: white;
+      font-family: consolas !important;
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar">
+    <ul>
+      <li><a href="/">JingleBerry</a></li>
+    </ul>
+    <ul>
+      <li><a href="/latest-releases">Latest Releases</a></li>
+      <li><a href="/works">All Chapters</a></li>
+    </ul>
+  </div>
+  <div id="headline">
+    <h1>Jingleberry Productions</h1>
+  </div>
+  <div id="content">
+    <p>Insert placeholder blah blah</p>
+    <p>Lorem ipsum something here</p>
+    <p>Discover a vast collection of manga titles, explore different genres, and stay up-to-date with the latest releases.</p>    
+    <p>Start reading now and immerse yourself in the captivating world of manga!</p>
+    <br>
+    <h3>The Team</h3>
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="https://placehold.co/200x100" alt="Kaido Shariar">
+        <p>Kaido Shariar<br>Producer and Production Owner</p>
+      </div>
+      <div class="team-member">
+        <img src="https://placehold.co/150x100" alt="Diego Makoto">
+        <p>Diego Makoto<br>Manga artist and Illustrator<br>Co-writer and Production Co-owner</p>
+      </div>
+      <div class="team-member">
+        <img src="https://placehold.co/100x100" alt="Micaella">
+        <p>Mikasa Mitchibasu<br>Digital Artist<br>Mikasa Mitchibasu</p>
+      </div>
+      <div class="team-member">
+        <img src="https://placehold.co/100x100" alt="Orenji Konoha">
+        <p>Orenji Konoha<br>Web Developers and Programmer</p>
+      </div>
+      <div class="team-member">
+        <img src="https://placehold.co/100x100" alt="cedie xd">
+        <p>insert cedie's pen name here<br>3D Animator</p>
+      </div>
+      <div class="team-member">
+        <img src="https://placehold.co/100x100" alt="Kato Rei San">
+        <p>Kato Rei San<br>Voice Actor</p>
+      </div>
+      <div class="team-member">
+        <img src="https://placehold.co/100x100" alt="Kito Yousuf">
+        <p>Kito Yousuf<br>Voice Actor</p>
+      </div>
+      <div class="team-member"></div>
+    </div>
+    <br><br><br>
+  </div>
+  
+  <div id="footer">
+    <a href="https://orangeleafdev.github.io" target="_blank">Website made by OrangeLeaf36
+    </a>
+    <img src="https://orangeleafdev.github.io/logo-export.png" alt="Website Logo">
+  </div>
+</body>
+</html>
